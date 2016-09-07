@@ -1,0 +1,32 @@
+<div ng-controller="gameController">
+<div class="row">
+	<div class="col-xs-12">&nbsp;</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<a class="btn btn-primary" ng-click="addDeck();">Add another deck of cards</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">&nbsp;</div>
+</div>
+<div class="row">
+	<div ng-repeat="deck in decks" class="col-xs-6 col-sm-3 col-md-2 col-lg-1">
+		<div class="game">
+			<div class="game-controls">
+				<a ng-click="shuffleDeck($index);"><i class="glyphicon glyphicon-retweet" title="Shuffle this deck!"></i></a>
+				<a ng-click="sortDeck($index);"><i class="glyphicon glyphicon-arrow-down" title="Sort this deck!"></i></a>
+				<a ng-click="removeDeck($index);"><i class="glyphicon glyphicon-trash" title="Remove deck from game"></i></a>
+			</div>
+			<div class="card-deck">
+				Done!
+				<div ng-click="discardCard($parent.$index);" ng-repeat="card in deck" class="playing-card"><span class="card-face {{card.suit + ' ' + card.face }}"></span></div>
+			</div>
+
+			<div class="card-discard">
+				<div ng-repeat="discarded in deck.discarded" class="playing-card"><span class="card-face {{discarded.suit + ' ' + discarded.face}}"></span></div>
+			</div>	
+		</div>
+	</div>
+</div>
+</div>

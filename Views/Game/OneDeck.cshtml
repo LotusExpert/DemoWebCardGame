@@ -1,0 +1,16 @@
+<div ng-controller="oneDeckController">
+<div class="row">
+	<div class="col-xs-12">
+		<a ng-click="shuffleOneDeck();" class="btn btn-default"><i class="glyphicon glyphicon-retweet" title="Shuffle this deck!"></i> Shuffle!</a>
+		<a ng-click="sortOneDeck();" class="btn btn-default"><i class="glyphicon glyphicon-arrow-down" title="Sort this deck!"></i>Sort!</a>		
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">&nbsp;</div>
+</div>
+<div class="row">
+	<div class="col-xs-6 col-sm-2 col-md-2 col-lg-1" ng-repeat="card in deck">
+		<div  class="playing-card card-discard face-up-card"><span class="card-face {{card.suit + ' ' + card.face }}"></span></div>
+	</div>
+</div>
+</div>
